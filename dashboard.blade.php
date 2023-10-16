@@ -36,6 +36,7 @@
 </td>
                         <td><a href="logout">Logout</a>
                         <td><a href="{{"edit/".$data->id}}">EDIT</a>
+                           <a href="{{"delete/".$data->id}}">Delete</a>
                       </td>
 
                     </tr>
