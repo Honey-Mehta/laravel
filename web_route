@@ -24,4 +24,5 @@ Route::post('login-user',[CustomAuthController::class,'loginUser'])->name('login
 Route::get('/dashboard',[CustomAuthController::class,'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/edit/{id}',[CustomAuthController::class,'showData']);
-Route::post('/edit',[CustomAuthController::class,'update'])->name('edit');;
+Route::post('/edit',[CustomAuthController::class,'update'])->name('edit');
+Route::get('/delete/{id}',[CustomAuthController::class,'delete']);
