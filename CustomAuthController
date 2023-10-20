@@ -64,7 +64,7 @@ class CustomAuthController extends Controller
                if(Hash::check($request->password,$user->password))
                {
                   $request->session()->put('loginId', $user->id);
-                  return redirect('dashboard');
+                  return redirect('/admin/dashboard');
                }
                else
                {
@@ -95,7 +95,7 @@ class CustomAuthController extends Controller
         if (Session::has('loginId'))
         {
             Session::pull('loginId');
-            return redirect('login');
+            return redirect('/admin/login');
         }
     }
    
@@ -112,14 +112,14 @@ class CustomAuthController extends Controller
         $data->name=$req->name;
         $data->email=$req->email;
         $data->save();
-        return redirect('dashboard');
+        return redirect('/admin/dashboard');
     }
-
-       public function delete($id)
+ 
+    public function delete($id)
     {
           $data=User::find($id);
           $data->delete();
-          return redirect('dashboard');
+          return redirect('/admin/dashboard');
     }
 
 }
